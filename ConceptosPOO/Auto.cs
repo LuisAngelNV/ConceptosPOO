@@ -19,6 +19,14 @@ namespace ConceptosPOO
             modelo = "Desconocido";
             año = 0;
         }
+
+        // Constructor con parámetros
+        public Auto(string marca, string modelo, int año)
+        {
+            this.marca = marca;
+            this.modelo = modelo;
+            this.año = año;
+        }
         // Método Setter (Asigna un valor al atributo)
         public void SetMarca(string nuevaMarca)
         {
