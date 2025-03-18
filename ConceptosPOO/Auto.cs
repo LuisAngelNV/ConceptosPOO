@@ -12,6 +12,13 @@ namespace ConceptosPOO
         private string modelo;
         private int año;
 
+        // Constructor (se ejecuta al crear un objeto)
+        public Auto()
+        {
+            marca = "Desconocida";
+            modelo = "Desconocido";
+            año = 0;
+        }
         // Método Setter (Asigna un valor al atributo)
         public void SetMarca(string nuevaMarca)
         {
@@ -39,13 +46,11 @@ namespace ConceptosPOO
         {
             return año;
         }
-                
-        // Método para mostrar la información del auto
+
+        // Método para mostrar la información
         public void MostrarInfo()
         {
-            Console.WriteLine("Marca: " + marca);
-            Console.WriteLine("Modelo: " + modelo);
-            Console.WriteLine("Año: " + año);
+            Console.WriteLine($"Marca: {marca}, Modelo: {modelo}, Año: {año}");
         }
     }
 }

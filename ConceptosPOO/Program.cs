@@ -1,8 +1,8 @@
 ﻿using ConceptosPOO;
 
-
+//Instanciar un objeto de la clase Auto
 Auto miAuto = new Auto();
-// Asignar valores a los atributos del objeto
+miAuto.MostrarInfo();// Asignar valores a los atributos del objeto
 // Usamos el Setter para asignar un valor
 miAuto.SetMarca("Toyota");
 miAuto.SetModelo("Corolla");
