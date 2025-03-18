@@ -1,9 +1,15 @@
 ﻿using ConceptosPOO;
+// Instanciación de la clase Auto o conocida como objeto
+Auto miAuto = new Auto();
+miAuto.Marca = "Toyota";
+miAuto.Modelo = "Corolla";
+miAuto.NumeroPuertas = 4;
+miAuto.MostrarInfo();
 
-// Usando el constructor por defecto
-Auto auto1 = new Auto();
-auto1.MostrarInfo();
 
-// Usando el constructor con parámetros
-Auto auto2 = new Auto("Toyota", "Corolla", 2022);
-auto2.MostrarInfo();
+// Instanciación de la clase Auto o conocida como objeto
+Moto miMoto = new Moto();
+miMoto.Marca = "Yamaha";
+miMoto.Modelo = "YZF-R3";
+miMoto.TieneCasco = true;
+miMoto.MostrarInfo();

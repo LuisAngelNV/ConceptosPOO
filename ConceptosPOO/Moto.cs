@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace ConceptosPOO
 {
-    public class Auto : Vehiculo
+    public class Moto : Vehiculo
     {
-        // Propiedades específicas de la clase Auto - Atributos
-        public int NumeroPuertas;
+        // Propiedades específicas de la clase Moto - Atributos
+        public bool TieneCasco;
     }
 }
