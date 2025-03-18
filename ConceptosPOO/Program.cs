@@ -3,9 +3,15 @@
 
 Auto miAuto = new Auto();
 // Asignar valores a los atributos del objeto
-miAuto.marca = "Toyota";
-miAuto.modelo = "Corolla";
-miAuto.año = 2022;
+// Usamos el Setter para asignar un valor
+miAuto.SetMarca("Toyota");
+miAuto.SetModelo("Corolla");
+miAuto.SetAño(2020);
 
-// Llamar al método MostrarInfo()
+// Usamos el Getter para obtener el valor
+Console.WriteLine("Marca: " + miAuto.GetMarca());
+Console.WriteLine("Modelo: " + miAuto.GetModelo());
+Console.WriteLine("Año: " + miAuto.GetAño());
+
+// Mostrar la información del auto
 miAuto.MostrarInfo();

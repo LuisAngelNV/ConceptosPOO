@@ -7,11 +7,39 @@ using System.Threading.Tasks;
 namespace ConceptosPOO
 {
     public class Auto
-    {
-        public string marca;
-        public string modelo;
-        public int año;
+    { // Atributos privados
+        private string marca;
+        private string modelo;
+        private int año;
 
+        // Método Setter (Asigna un valor al atributo)
+        public void SetMarca(string nuevaMarca)
+        {
+            marca = nuevaMarca;
+        }
+        public void SetModelo(string nuevoModelo)
+        {
+            modelo = nuevoModelo;
+        }
+        public void SetAño(int nuevoAño)
+        {
+            año = nuevoAño;
+        }
+
+        // Método Getter (Obtiene el valor del atributo)
+        public string GetMarca()
+        {
+            return marca;
+        }
+        public string GetModelo()
+        {
+            return modelo;
+        }
+        public int GetAño()
+        {
+            return año;
+        }
+                
         // Método para mostrar la información del auto
         public void MostrarInfo()
         {
