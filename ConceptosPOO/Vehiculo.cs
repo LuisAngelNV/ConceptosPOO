@@ -9,14 +9,17 @@ namespace ConceptosPOO
     // Clase padre o superclase
     public class Vehiculo
     {
-        // Propiedades de la clase Vehiculo - Atributos
-        public string Marca;
-        public string Modelo;
-
-        // Método de la clase Vehiculo - Comportamiento
-        public void MostrarInfo()
+        // Atributo protegido
+        protected string Marca;
+        // Método
+        public void AsignarMarca(string marca)
         {
-            Console.WriteLine($"Marca: {Marca}, Modelo: {Modelo}");
+            this.Marca = marca;
+        }
+        // Método
+        public void MostrarMarca()
+        {
+            Console.WriteLine($"Marca: {Marca}");
         }
     }
 }

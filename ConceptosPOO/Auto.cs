@@ -10,5 +10,12 @@ namespace ConceptosPOO
     {
         // Propiedades específicas de la clase Auto - Atributos
         public int NumeroPuertas;
+
+
+        public void CambiarMarca(string nuevaMarca)
+        {
+            this.Marca = nuevaMarca; // Se puede acceder porque es 'protected'
+            Console.WriteLine($"nueva marca {nuevaMarca}");
+        }
     }
 }
