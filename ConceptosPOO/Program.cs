@@ -1,4 +1,5 @@
 ﻿using ConceptosPOO;
+using ConceptosPOO.RetoUno;
 // Instanciación de la clase Auto o conocida como objeto
 Auto miAuto = new Auto();
 miAuto.AsignarMarca("Toyota");
@@ -13,3 +14,11 @@ miMoto.AsignarMarca("Yamaha");
 //miMoto.Modelo = "YZF-R3";
 miMoto.TieneCasco = true;
 miMoto.MostrarMarca();
+
+
+
+Gerente gerente = new Gerente("Juan", 35, 50000, "Gerente", "Finanzas");
+Desarrollador desarrollador = new Desarrollador("Pedro", 28, 40000, "Desarrollador", "C#");
+
+gerente.MostrarInfo();
+desarrollador.MostrarInfo();
