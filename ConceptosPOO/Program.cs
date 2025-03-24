@@ -1,4 +1,5 @@
 ﻿using ConceptosPOO;
+using ConceptosPOO.RetoDos;
 using ConceptosPOO.RetoUno;
 // Instanciación de la clase Auto o conocida como objeto
 Auto miAuto = new Auto();
@@ -22,3 +23,18 @@ Desarrollador desarrollador = new Desarrollador("Pedro", 28, 40000, "Desarrollad
 
 gerente.MostrarInfo();
 desarrollador.MostrarInfo();
+
+
+//RetoDos
+
+List<Figura> figuras = new List<Figura>();
+
+figuras.Add(new Cuadrado() { Lado = 5 });
+figuras.Add(new Circulo() { radio = 5 });
+figuras.Add(new Triangulo(5, 5));
+figuras.Add(new Triangulo(5, 5, 5));
+
+foreach (Figura figura in figuras)
+{
+    figura.MostrarInfo();
+}
