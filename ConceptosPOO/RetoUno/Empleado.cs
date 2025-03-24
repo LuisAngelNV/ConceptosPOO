@@ -11,8 +11,8 @@ namespace ConceptosPOO.RetoUno
         public string nombre;
         public string cargo;
         public int edad;
-        protected int salario;
-        
+        private int salario;
+
 
         //Constructor(es)
         public Empleado()
@@ -30,18 +30,14 @@ namespace ConceptosPOO.RetoUno
             this.cargo = cargo;
         }
 
-
-        // Corregir métodos de acceso
-        public int GetSalario()
+        // Propiedad para manejar el salario de forma más limpia
+        public int Salario
         {
-            return salario;
-        }
-
-        public void SetSalario(int _Salario)
-        {
-            if (_Salario >= 0) // Validamos que el salario no sea negativo
+            get { return salario; }
+            set
             {
-                salario = _Salario;
+                if (value >= 0)  // Validación dentro de la propiedad
+                    salario = value;
             }
         }
 

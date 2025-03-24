@@ -9,7 +9,7 @@ namespace ConceptosPOO.RetoUno
 {
     class Gerente : Empleado
     {
-        public string departamento;
+        public string departamento { get; set; }
         public Gerente()
         {
             departamento = "Desconocido";
