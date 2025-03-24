@@ -1,5 +1,6 @@
 ﻿using ConceptosPOO;
 using ConceptosPOO.RetoDos;
+using ConceptosPOO.RetoTres;
 using ConceptosPOO.RetoUno;
 // Instanciación de la clase Auto o conocida como objeto
 Auto miAuto = new Auto();
@@ -37,4 +38,25 @@ figuras.Add(new Triangulo(5, 5, 5));
 foreach (Figura figura in figuras)
 {
     figura.MostrarInfo();
+}
+
+
+//RetoTres
+Perro perro = new Perro();
+perro.HacerSonido();
+
+Gato gato = new Gato();
+gato.HacerSonido();
+
+
+// Mejora
+List<Animal> animales = new List<Animal>();
+
+animales.Add(new Perro());
+animales.Add(new Gato());
+animales.Add(new Perro());
+
+foreach (Animal animal in animales)
+{
+    animal.HacerSonido();
 }
