@@ -1,6 +1,8 @@
 ﻿using ConceptosPOO;
 using ConceptosPOO.DispositivosElectronicos;
 using ConceptosPOO.InterfaceRetoDos;
+using ConceptosPOO.InterfacesRetoTres;
+
 //using ConceptosPOO.InterfaceRetoUno;
 using ConceptosPOO.Intrefaces;
 using ConceptosPOO.Intrefaces.Notificaciones;
@@ -132,3 +134,26 @@ ConceptosPOO.InterfaceRetoDos.Alerta alerta3 = new ConceptosPOO.InterfaceRetoDos
 alerta1.Enviar("¡Bienvenido al sistema!"); // Usa Email
 alerta2.Enviar("¡Bienvenido al sistema!"); // Usa SMS
 alerta3.Enviar("¡Bienvenido al sistema!"); // Usa Push
+
+
+// Prueba 3. Interfaces y heredar
+Checkout checkout = new Checkout(new PagoTarjeta());
+Checkout checkout2 = new Checkout(new PagoPayPal());
+Checkout checkout3 = new Checkout(new PagoCripto());
+
+checkout.RealizarPago(150.50m); // Usa tarjeta de crédito
+checkout2.RealizarPago(80.25m); // usa PayPal
+checkout3.RealizarPago(0.015m); // Usa Criptomonedas
+
+List<Checkout> checkouts = new List<Checkout>
+{
+    new Checkout(new PagoTarjeta()),
+    new Checkout(new PagoPayPal()),
+    new Checkout(new PagoCripto())
+};
+
+foreach (var pago in checkouts)
+{
+    pago.RealizarPago(100.00m);
+}
+
