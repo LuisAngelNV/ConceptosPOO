@@ -2,6 +2,7 @@
 using ConceptosPOO.DispositivosElectronicos;
 using ConceptosPOO.InterfaceRetoUno;
 using ConceptosPOO.Intrefaces;
+using ConceptosPOO.Intrefaces.Notificaciones;
 using ConceptosPOO.RetoDos;
 using ConceptosPOO.RetoTres;
 using ConceptosPOO.RetoUno;
@@ -109,4 +110,13 @@ tele.Encender(); // ✅ Puedes usar Encender()
 Refrigerador r = new Refrigerador("LG");
 r.Encender();
 r.Apagar();
+
+
+Alerta alerta1 = new Alerta(new EmailNotificador());
+Alerta alerta2 = new Alerta(new SmsNotificador());
+Alerta alerta3 = new Alerta(new PushNotificador());
+
+alerta1.EnviarAlerta(); // Usa Email
+alerta2.EnviarAlerta(); // Usa SMS
+alerta3.EnviarAlerta(); // Usa SMS
 
