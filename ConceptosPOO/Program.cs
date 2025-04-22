@@ -1,4 +1,7 @@
 ﻿using ConceptosPOO;
+using ConceptosPOO.DispositivosElectronicos;
+using ConceptosPOO.InterfaceRetoUno;
+using ConceptosPOO.Intrefaces;
 using ConceptosPOO.RetoDos;
 using ConceptosPOO.RetoTres;
 using ConceptosPOO.RetoUno;
@@ -18,15 +21,15 @@ miMoto.TieneCasco = true;
 miMoto.MostrarMarca();
 
 
-
+#region Retos de programación
+// Reto uno
 Gerente gerente = new Gerente("Juan", 35, 50000, "Gerente", "Finanzas");
 Desarrollador desarrollador = new Desarrollador("Pedro", 28, 40000, "Desarrollador", "C#");
 
 gerente.MostrarInfo();
 desarrollador.MostrarInfo();
 
-
-//RetoDos
+//Reto Dos
 
 List<Figura> figuras = new List<Figura>();
 
@@ -41,7 +44,7 @@ foreach (Figura figura in figuras)
 }
 
 
-//RetoTres
+//Reto Tres
 Perro perro = new Perro();
 perro.HacerSonido();
 
@@ -60,3 +63,50 @@ foreach (Animal animal in animales)
 {
     animal.HacerSonido();
 }
+#endregion
+
+#region 'Implementar una inteface
+IConducible vehiculo1 = new Auto();
+IConducible vehiculo2 = new Moto();
+
+vehiculo1.Conducir(); // Conduciendo un auto...
+vehiculo2.Conducir(); // Conduciendo una moto...
+
+Telefono miTelefono = new Telefono();
+
+miTelefono.Llamar("555-1234");
+miTelefono.Navegar("www.google.com");
+miTelefono.TomarFoto();
+#endregion
+
+// Prueba 1. Interfaces y heredar
+/* El error que se tiene aqui es de que solo funciona con IEncendible => Encender, ya que solo trae para encender y al querer llamar a apagar, este no exiete en este contexto
+     solucion:
+
+IEncendible encendible = new Refrigerador("LG");
+IEncendible encendible1 = new Televisor("Samsung");
+
+
+encendible.Encender();
+encendible.Apagar();
+
+encendible1.Encender();
+encendible1.Apagar();
+
+Crear una instanciación de Refrigerador o Television.
+Solo Así funcionara
+
+*/
+
+// solución
+IApagable refri = new Refrigerador("LG");
+refri.Apagar(); // ✅ Ahora puedes acceder a Apagar()
+
+IEncendible tele = new Televisor("Samsung");
+tele.Encender(); // ✅ Puedes usar Encender()
+
+// O mejor:
+Refrigerador r = new Refrigerador("LG");
+r.Encender();
+r.Apagar();
+

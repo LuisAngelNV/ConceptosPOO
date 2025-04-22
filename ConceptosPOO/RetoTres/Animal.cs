@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConceptosPOO.RetoUno;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,6 +28,28 @@ namespace ConceptosPOO.RetoTres
         public override void HacerSonido()
         {
             Console.WriteLine("El gato maulla: Miau Miau!");
+        }
+    }
+
+    interface IEmpleado
+    {
+        void Trabajar();
+    }
+
+    public class IGerente : IEmpleado
+    {
+        public void Trabajar()
+        {
+            {
+                Console.WriteLine("El gerente está organizando reuniones.");
+            }
+        }
+    }
+    public class IDesarrollador : IEmpleado
+    {
+        public  void Trabajar()
+        {
+            Console.WriteLine("El desarrollador está escribiendo código.");
         }
     }
 }
