@@ -1,6 +1,7 @@
 ﻿using ConceptosPOO;
 using ConceptosPOO.DispositivosElectronicos;
-using ConceptosPOO.InterfaceRetoUno;
+using ConceptosPOO.InterfaceRetoDos;
+//using ConceptosPOO.InterfaceRetoUno;
 using ConceptosPOO.Intrefaces;
 using ConceptosPOO.Intrefaces.Notificaciones;
 using ConceptosPOO.RetoDos;
@@ -100,23 +101,34 @@ Solo Así funcionara
 */
 
 // solución
-IApagable refri = new Refrigerador("LG");
-refri.Apagar(); // ✅ Ahora puedes acceder a Apagar()
+//IApagable refri = new Refrigerador("LG");
+//refri.Apagar(); // ✅ Ahora puedes acceder a Apagar()
 
-IEncendible tele = new Televisor("Samsung");
-tele.Encender(); // ✅ Puedes usar Encender()
+//IEncendible tele = new Televisor("Samsung");
+//tele.Encender(); // ✅ Puedes usar Encender()
 
-// O mejor:
-Refrigerador r = new Refrigerador("LG");
-r.Encender();
-r.Apagar();
+//// O mejor:
+//Refrigerador r = new Refrigerador("LG");
+//r.Encender();
+//r.Apagar();
 
 
-Alerta alerta1 = new Alerta(new EmailNotificador());
-Alerta alerta2 = new Alerta(new SmsNotificador());
-Alerta alerta3 = new Alerta(new PushNotificador());
+//Alerta alerta1 = new Alerta(new EmailNotificador());
+//Alerta alerta2 = new Alerta(new SmsNotificador());
+//Alerta alerta3 = new Alerta(new PushNotificador());
 
-alerta1.EnviarAlerta(); // Usa Email
-alerta2.EnviarAlerta(); // Usa SMS
-alerta3.EnviarAlerta(); // Usa SMS
+//alerta1.EnviarAlerta(); // Usa Email
+//alerta2.EnviarAlerta(); // Usa SMS
+//alerta3.EnviarAlerta(); // Usa SMS
 
+
+// Prueba 2. Polimorfismo Avanzado con Interfaces en C# 
+
+// Usar el espacio de nombres completo para desambiguar
+ConceptosPOO.InterfaceRetoDos.Alerta alerta1 = new ConceptosPOO.InterfaceRetoDos.Alerta(new ConceptosPOO.InterfaceRetoDos.EmailNotificador());
+ConceptosPOO.InterfaceRetoDos.Alerta alerta2 = new ConceptosPOO.InterfaceRetoDos.Alerta(new ConceptosPOO.InterfaceRetoDos.SmsNotificador());
+ConceptosPOO.InterfaceRetoDos.Alerta alerta3 = new ConceptosPOO.InterfaceRetoDos.Alerta(new ConceptosPOO.InterfaceRetoDos.PushNotificador());
+
+alerta1.Enviar("¡Bienvenido al sistema!"); // Usa Email
+alerta2.Enviar("¡Bienvenido al sistema!"); // Usa SMS
+alerta3.Enviar("¡Bienvenido al sistema!"); // Usa Push
