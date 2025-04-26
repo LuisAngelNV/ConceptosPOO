@@ -1,5 +1,6 @@
 ﻿using ConceptosPOO;
 using ConceptosPOO.ClasesAbstractas;
+using ConceptosPOO.ClasesAbstractas.PruebaDos;
 using ConceptosPOO.ClasesAbstractas.PruebaUno;
 using ConceptosPOO.DispositivosElectronicos;
 using ConceptosPOO.InterfaceRetoDos;
@@ -203,4 +204,32 @@ foreach (var dispositivo in dispositivos)
     }
 
     dispositivo.Apagar();
+}
+
+Console.WriteLine("____Robots Automaticos____");
+// Instanciar clase robot
+List<RobotAutonomo> robots = new List<RobotAutonomo>
+{
+   new RobotRescatista("RescateX"),
+   new RobotAereo("Scout2000"),
+   new RobotDeCombate("CombatOne")
+};
+
+foreach (var robot in robots)
+{
+    robot.Iniciar();
+    robot.RealizarTarea();
+    if (robot is IVolador volador)
+    {
+        volador.Volar();
+    }
+    if (robot is INadador nadador)
+    {
+        nadador.Nadar();
+    }
+    if (robot is IArtillero artillero)
+    {
+        artillero.Disparar();
+    }
+    robot.Detener();
 }
