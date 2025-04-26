@@ -1,0 +1,8 @@
+﻿🔹 Escenario:
+Queremos crear un sistema que controle dispositivos inteligentes: como lámparas inteligentes, cafeteras inteligentes y aspiradoras robots.
+
+Todos los dispositivos comparten algunas características (como tener nombre y estado encendido/apagado), pero no todos tienen las mismas habilidades:
+
+Algunos dispositivos pueden conectarse a internet.
+
+Otros dispositivos pueden programarse con un temporizador.

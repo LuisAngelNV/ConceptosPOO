@@ -1,5 +1,6 @@
 ﻿using ConceptosPOO;
 using ConceptosPOO.ClasesAbstractas;
+using ConceptosPOO.ClasesAbstractas.PruebaUno;
 using ConceptosPOO.DispositivosElectronicos;
 using ConceptosPOO.InterfaceRetoDos;
 using ConceptosPOO.InterfacesRetoTres;
@@ -177,3 +178,29 @@ persona2.Trabajar();
 ((Programador)persona2).TrabajarDesdeCasa();
 ((Programador)persona2).HacerHorasExtra();
 
+
+
+
+List<DispositivoInteligente> dispositivos = new List<DispositivoInteligente>
+{
+    new LamparaInteligente("Lampara"),
+    new CafeteraInteligente("Cafetera"),
+    new RobotAspiradora("Robot Aspiradora"),
+};
+foreach (var dispositivo in dispositivos)
+{
+    dispositivo.Encender();
+    dispositivo.FuncionPrincipal();
+
+    if (dispositivo is IConectividad conectividad)
+    {
+        conectividad.ConectarInternet();
+    }
+
+    if (dispositivo is ITemporizador temporizador)
+    {
+        temporizador.ProgramarTemporizador(30);
+    }
+
+    dispositivo.Apagar();
+}
