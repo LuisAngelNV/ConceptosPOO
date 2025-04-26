@@ -1,4 +1,5 @@
 ﻿using ConceptosPOO;
+using ConceptosPOO.ClasesAbstractas;
 using ConceptosPOO.DispositivosElectronicos;
 using ConceptosPOO.InterfaceRetoDos;
 using ConceptosPOO.InterfacesRetoTres;
@@ -49,24 +50,24 @@ foreach (Figura figura in figuras)
 
 
 //Reto Tres
-Perro perro = new Perro();
-perro.HacerSonido();
+//Perro perro = new Perro();
+//perro.HacerSonido();
 
-Gato gato = new Gato();
-gato.HacerSonido();
+//Gato gato = new Gato();
+//gato.HacerSonido();
 
 
-// Mejora
-List<Animal> animales = new List<Animal>();
+//// Mejora
+//List<Animal> animales = new List<Animal>();
 
-animales.Add(new Perro());
-animales.Add(new Gato());
-animales.Add(new Perro());
+//animales.Add(new Perro());
+//animales.Add(new Gato());
+//animales.Add(new Perro());
 
-foreach (Animal animal in animales)
-{
-    animal.HacerSonido();
-}
+//foreach (Animal animal in animales)
+//{
+//    animal.HacerSonido();
+//}
 #endregion
 
 #region 'Implementar una inteface
@@ -156,4 +157,23 @@ foreach (var pago in checkouts)
 {
     pago.RealizarPago(100.00m);
 }
+
+
+CAAnimal miPerro = new ConceptosPOO.ClasesAbstractas.Perro();
+miPerro.Nombre = "Max";
+miPerro.Comer();       // de la clase base
+miPerro.HacerSonido(); // de la clase hija
+
+
+// Instanciación de la clase Gato o conocida como objeto
+Persona persona = new Obrero("Martinez", 22);
+Persona persona2 = new Programador("Lopez", 58);
+
+persona.Presentarse();
+persona.Trabajar();
+
+persona2.Presentarse();
+persona2.Trabajar();
+((Programador)persona2).TrabajarDesdeCasa();
+((Programador)persona2).HacerHorasExtra();
 
